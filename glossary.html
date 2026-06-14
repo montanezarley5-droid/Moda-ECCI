@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Moda ECCI Glossary — Technical terms in fashion, design, technology, frontend development and UX." />
+  <title>Glossary — Moda ECCI</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ── Background Orbs ─────────────────────────────── -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ── Custom Cursor ───────────────────────────────── -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════════════════ -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg scrolled" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-logo">MODA ECCI</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+        <i class="bi bi-list text-white fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html#experience">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#gallery">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#software">Tecnología</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#sustainability">Sostenibilidad</a></li>
+          <li class="nav-item"><a class="nav-link" style="color:var(--white)!important" href="glossary.html">Glosario</a></li>
+          <li class="nav-item ms-2">
+            <button id="theme-toggle" aria-label="Cambiar tema">☀️ Light</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       GLOSSARY HERO
+       ════════════════════════════════════════════════════ -->
+  <header class="glossary-hero" role="banner">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label" style="display:block;text-align:center;margin-bottom:1rem">
+          Fashion · Design · Technology · Frontend · UX
+        </span>
+        <h1 class="section-title text-center" style="font-size:clamp(2.5rem,6vw,5rem)">
+          Technical <span>Glossary</span>
+        </h1>
+        <p style="color:var(--muted);text-align:center;max-width:540px;margin:1rem auto 0;line-height:1.8">
+          A curated dictionary of key terms bridging fashion, design, and frontend development.
+          Explore 15 terms across five disciplines.
+        </p>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="reveal reveal-delay-1">
+        <div class="search-wrap">
+          <i class="bi bi-search search-icon" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="glossary-search"
+            class="search-input"
+            placeholder="Search terms in English, Spanish, or by definition…"
+            aria-label="Buscar términos en el glosario"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <!-- Stats Pills -->
+      <div class="text-center mt-3 reveal reveal-delay-2">
+        <span class="card-tag tag-violet me-1">15 Terms</span>
+        <span class="card-tag tag-magenta me-1">5 Categories</span>
+        <span class="card-tag tag-cyan">Bilingual</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════
+       GLOSSARY TABLE
+       ════════════════════════════════════════════════════ -->
+  <main>
+    <div class="container pb-5">
+
+      <!-- Category Legend -->
+      <div class="d-flex flex-wrap gap-2 mb-4 reveal">
+        <span class="term-badge badge-fashion">Fashion</span>
+        <span class="term-badge badge-design">Design</span>
+        <span class="term-badge badge-tech">Technology</span>
+        <span class="term-badge badge-frontend">Frontend</span>
+        <span class="term-badge badge-ux">UX</span>
+      </div>
+
+      <!-- Table -->
+      <div class="glossary-table-wrap reveal">
+        <table class="glossary-table" role="table" aria-label="Glosario de términos técnicos">
+          <thead>
+            <tr>
+              <th scope="col">Term (EN)</th>
+              <th scope="col">Traducción (ES)</th>
+              <th scope="col">Technical Definition</th>
+              <th scope="col">Category</th>
+            </tr>
+          </thead>
+          <tbody id="glossary-body">
+
+            <!-- 01 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Colorway</span></td>
+              <td><span class="term-es">Combinación de Color</span></td>
+              <td>A specific combination of colors applied to a garment, textile, or digital product. In fashion, it determines how a pattern is rendered across a collection; in UI, it refers to a palette variant applied to a component system.</td>
+              <td><span class="term-badge badge-fashion">Fashion</span></td>
+            </tr>
+
+            <!-- 02 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Pantone Matching System</span></td>
+              <td><span class="term-es">Sistema Pantone</span></td>
+              <td>A standardized color identification system used across industries to ensure color consistency regardless of medium or geography. Each color has a unique PMS number enabling precise replication in printing, textiles, and digital screens.</td>
+              <td><span class="term-badge badge-design">Design</span></td>
+            </tr>
+
+            <!-- 03 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Sustainable Fashion</span></td>
+              <td><span class="term-es">Moda Sostenible</span></td>
+              <td>A design and production approach that prioritizes environmental responsibility, ethical labor, and circular economy principles. It encompasses material selection, supply chain transparency, and end-of-life garment management.</td>
+              <td><span class="term-badge badge-fashion">Fashion</span></td>
+            </tr>
+
+            <!-- 04 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Design Token</span></td>
+              <td><span class="term-es">Token de Diseño</span></td>
+              <td>A named variable that stores visual design decisions (colors, spacing, typography, shadows) in a format consumable by both design tools and code. Tokens enable consistent, scalable design systems across platforms and products.</td>
+              <td><span class="term-badge badge-frontend">Frontend</span></td>
+            </tr>
+
+            <!-- 05 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Glassmorphism</span></td>
+              <td><span class="term-es">Glassmorfismo</span></td>
+              <td>A UI design trend characterized by frosted-glass aesthetics using CSS backdrop-filter blur, semi-transparent backgrounds, subtle borders, and layered depth. It creates a sense of dimensionality and modernity in digital interfaces.</td>
+              <td><span class="term-badge badge-frontend">Frontend</span></td>
+            </tr>
+
+            <!-- 06 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Visual Hierarchy</span></td>
+              <td><span class="term-es">Jerarquía Visual</span></td>
+              <td>The intentional arrangement of visual elements to guide the viewer's eye according to importance. Achieved through variations in size, contrast, color, spacing, and position. Critical in both fashion editorial layout and UI/UX design.</td>
+              <td><span class="term-badge badge-design">Design</span></td>
+            </tr>
+
+            <!-- 07 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Responsive Design</span></td>
+              <td><span class="term-es">Diseño Responsivo</span></td>
+              <td>A web development approach where layouts, images, and interfaces adapt fluidly to different screen sizes and device types using CSS media queries, flexible grids, and relative units. Ensures consistent experiences from mobile to desktop.</td>
+              <td><span class="term-badge badge-frontend">Frontend</span></td>
+            </tr>
+
+            <!-- 08 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Color Psychology</span></td>
+              <td><span class="term-es">Psicología del Color</span></td>
+              <td>The study of how colors influence human perception, emotion, and behavior. Red evokes urgency, blue builds trust, green suggests nature and balance. Applied in branding, fashion, and interface design to shape user experience subconsciously.</td>
+              <td><span class="term-badge badge-design">Design</span></td>
+            </tr>
+
+            <!-- 09 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">User Experience (UX)</span></td>
+              <td><span class="term-es">Experiencia de Usuario</span></td>
+              <td>The totality of a person's perceptions and responses resulting from using a product or service. UX encompasses usability, accessibility, emotional response, and interaction quality — the equivalent of the "feel" of wearing a well-tailored garment.</td>
+              <td><span class="term-badge badge-ux">UX</span></td>
+            </tr>
+
+            <!-- 10 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Upcycling</span></td>
+              <td><span class="term-es">Supraciclaje</span></td>
+              <td>The process of transforming waste or discarded materials into new products of higher quality or value. In fashion, it involves repurposing old garments into new pieces. In tech, it parallels refactoring legacy code into modern, maintainable architecture.</td>
+              <td><span class="term-badge badge-fashion">Fashion</span></td>
+            </tr>
+
+            <!-- 11 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Semiotics</span></td>
+              <td><span class="term-es">Semiología</span></td>
+              <td>The study of signs and symbols and their use or interpretation. In fashion, garments function as sign systems communicating cultural codes and identity. In design, semiotics informs how icons, colors, and layouts communicate meaning to diverse audiences.</td>
+              <td><span class="term-badge badge-design">Design</span></td>
+            </tr>
+
+            <!-- 12 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Intersection Observer API</span></td>
+              <td><span class="term-es">API Intersection Observer</span></td>
+              <td>A browser JavaScript API that asynchronously observes changes in the intersection of a target element with an ancestor element or the viewport. Widely used to implement performant scroll-triggered animations without main thread blocking.</td>
+              <td><span class="term-badge badge-frontend">Frontend</span></td>
+            </tr>
+
+            <!-- 13 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Microinteraction</span></td>
+              <td><span class="term-es">Microinteracción</span></td>
+              <td>A small, contained product interaction designed to accomplish a single task. Examples include hover states, like animations, loading indicators, and form validation. Microinteractions add personality and communicative feedback to digital products.</td>
+              <td><span class="term-badge badge-ux">UX</span></td>
+            </tr>
+
+            <!-- 14 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Brand Identity</span></td>
+              <td><span class="term-es">Identidad de Marca</span></td>
+              <td>The visible elements of a brand — logo, color palette, typography, imagery, and tone of voice — that collectively distinguish it in the consumer's mind. Both fashion houses and tech products invest heavily in cohesive brand identity systems.</td>
+              <td><span class="term-badge badge-design">Design</span></td>
+            </tr>
+
+            <!-- 15 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Circular Economy</span></td>
+              <td><span class="term-es">Economía Circular</span></td>
+              <td>An economic model that aims to eliminate waste by keeping materials in use for as long as possible through reuse, repair, remanufacturing, and recycling. Applied in fashion to create closed-loop systems where garments are designed for multiple life cycles.</td>
+              <td><span class="term-badge badge-tech">Technology</span></td>
+            </tr>
+
+            <!-- 16 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Accessibility (a11y)</span></td>
+              <td><span class="term-es">Accesibilidad</span></td>
+              <td>The practice of designing and developing digital products usable by people of all abilities, including those with visual, auditory, motor, or cognitive disabilities. Guided by WCAG standards, it includes color contrast ratios, semantic HTML, and keyboard navigation.</td>
+              <td><span class="term-badge badge-ux">UX</span></td>
+            </tr>
+
+            <!-- 17 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">CSS Custom Properties</span></td>
+              <td><span class="term-es">Variables CSS</span></td>
+              <td>Native CSS variables defined using the -- prefix that store reusable values (colors, sizes, etc.) accessible throughout a stylesheet. They enable dynamic theming, design token implementation, and runtime value changes via JavaScript — the backbone of modern design systems.</td>
+              <td><span class="term-badge badge-frontend">Frontend</span></td>
+            </tr>
+
+            <!-- 18 -->
+            <tr class="glossary-row reveal">
+              <td><span class="term-en">Draping</span></td>
+              <td><span class="term-es">Drapeado</span></td>
+              <td>A fashion design technique where fabric is placed and pinned directly on a dress form or human body to create garment shapes, as opposed to flat pattern making. It requires understanding fabric behavior, gravity, and body contours — analogous to intuitive prototyping in UX design.</td>
+              <td><span class="term-badge badge-fashion">Fashion</span></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <!-- No Results Message -->
+        <div id="no-results" aria-live="polite">
+          <i class="bi bi-search" style="font-size:2rem;color:var(--amethyst);display:block;margin-bottom:.75rem"></i>
+          <p style="color:var(--muted)">No terms match your search. Try a different keyword.</p>
+        </div>
+
+      </div><!-- /.glossary-table-wrap -->
+
+      <!-- Back to Main -->
+      <div class="text-center mt-5 reveal">
+        <a href="index.html" class="btn-primary-glow">
+          <span><i class="bi bi-arrow-left me-2"></i>Back to Main Experience</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-logo">MODA ECCI</div>
+      <p class="footer-sub">Technical Glossary · Fashion × Design × Technology</p>
+      <nav class="footer-links" aria-label="Links del footer">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#experience">Experiencia</a>
+        <a href="index.html#gallery">Galería</a>
+        <a href="glossary.html">Glosario</a>
+      </nav>
+      <p class="footer-copy">© 2025 Moda ECCI · Proyecto Académico</p>
+    </div>
+  </footer>
+
+  <!-- ── Back to Top ──────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Volver al inicio">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Bootstrap 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
